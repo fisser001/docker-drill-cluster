@@ -1,0 +1,26 @@
+FROM java:8
+
+RUN mkdir -p /opt/drill/
+
+ENV DRILL_VERSION 1.15.0
+
+RUN wget http://apache.mirrors.hoobly.com/drill/drill-$DRILL_VERSION/apache-drill-$DRILL_VERSION.tar.gz
+
+ENV DRILL_ROOT /opt/drill/apache-drill-$DRILL_VERSION
+
+# extract all the things
+
+RUN tar zxvf apache-drill-$DRILL_VERSION.tar.gz -C /opt/drill
+
+# set up for bootstrap
+
+RUN mkdir /drill-scripts
+ADD bootstrap.sh /drill-scripts/
+
+ENV CLUSTER_ID ""
+ENV ZOOKEEPERS ""
+ENV ENABLE_EXCLUDES ""
+
+WORKDIR /drill-scripts/
+
+ENTRYPOINT ["/bin/sh", "/drill-scripts/bootstrap.sh"]
