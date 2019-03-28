@@ -3,7 +3,7 @@ FROM java:8
 RUN mkdir -p /opt/drill/
 
 ENV DRILL_VERSION 1.15.0
-
+RUN apt-get update && apt-get install -y git nano unzip
 RUN wget http://apache.mirrors.hoobly.com/drill/drill-$DRILL_VERSION/apache-drill-$DRILL_VERSION.tar.gz
 
 ENV DRILL_ROOT /opt/drill/apache-drill-$DRILL_VERSION
