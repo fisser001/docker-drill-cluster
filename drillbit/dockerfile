@@ -16,6 +16,7 @@ RUN tar zxvf apache-drill-$DRILL_VERSION.tar.gz -C /opt/drill
 
 RUN mkdir /drill-scripts
 ADD bootstrap.sh /drill-scripts/
+COPY storage-plugins-override.conf /opt/drill/apache-drill-1.15.0/conf
 
 ENV CLUSTER_ID ""
 ENV ZOOKEEPERS ""
