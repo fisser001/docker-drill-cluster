@@ -98,6 +98,8 @@ services:
   
   drillbit1:
     image: mfisser/drillbit:1.0.0
+    volumes:
+      - impalad:/data/results    
     depends_on:
       - zookeeper
     links:
@@ -111,6 +113,8 @@ services:
 
   drillbit2:
     image: mfisser/drillbit:1.0.0
+    volumes:
+      - impalad:/data/results    
     depends_on:
       - zookeeper
     links:
