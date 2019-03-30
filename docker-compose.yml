@@ -149,7 +149,7 @@ services:
       - ZOOKEEPERS=zookeeper:2181
       - ENABLE_EXPLUDES=parquet
     ports:
-      - 8048:8047  
+      - 8049:8047  
   
   drillbit4:
     image: mfisser/drillbit:1.0.0
@@ -164,7 +164,7 @@ services:
       - ZOOKEEPERS=zookeeper:2181
       - ENABLE_EXPLUDES=parquet
     ports:
-      - 8048:8047        
+      - 8050:8047        
 
   drillbit5:
     image: mfisser/drillbit:1.0.0
@@ -179,7 +179,7 @@ services:
       - ZOOKEEPERS=zookeeper:2181
       - ENABLE_EXPLUDES=parquet
     ports:
-      - 8048:8047  
+      - 8051:8047  
 
   zookeeper:
     image: zookeeper:latest
