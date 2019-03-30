@@ -42,6 +42,16 @@ services:
       - datanode2
     env_file:
       - ./hadoop-hive.env
+
+  nodemanager2:
+    image: mfisser/hadoop-nodemanager:1.0.0-hadoop2.7.6-java8
+    container_name: nodemanager2
+    depends_on:
+      - namenode
+      - datanode1
+      - datanode2
+    env_file:
+      - ./hadoop-hive.env
   
   datanode1:
     image: mfisser/hadoop-datanode:1.0.0-hadoop2.7.6-java8
@@ -124,8 +134,53 @@ services:
       - ZOOKEEPERS=zookeeper:2181
       - ENABLE_EXPLUDES=parquet
     ports:
-      - 8048:8047      
+      - 8048:8047
+
+  drillbit3:
+    image: mfisser/drillbit:1.0.0
+    volumes:
+      - drillbit:/data/results    
+    depends_on:
+      - zookeeper
+    links:
+      - zookeeper
+    environment:
+      - CLUSTER_ID=drillcluster
+      - ZOOKEEPERS=zookeeper:2181
+      - ENABLE_EXPLUDES=parquet
+    ports:
+      - 8048:8047  
   
+  drillbit4:
+    image: mfisser/drillbit:1.0.0
+    volumes:
+      - drillbit:/data/results    
+    depends_on:
+      - zookeeper
+    links:
+      - zookeeper
+    environment:
+      - CLUSTER_ID=drillcluster
+      - ZOOKEEPERS=zookeeper:2181
+      - ENABLE_EXPLUDES=parquet
+    ports:
+      - 8048:8047        
+
+  drillbit5:
+    image: mfisser/drillbit:1.0.0
+    volumes:
+      - drillbit:/data/results    
+    depends_on:
+      - zookeeper
+    links:
+      - zookeeper
+    environment:
+      - CLUSTER_ID=drillcluster
+      - ZOOKEEPERS=zookeeper:2181
+      - ENABLE_EXPLUDES=parquet
+    ports:
+      - 8048:8047  
+
   zookeeper:
     image: zookeeper:latest
     ports:
