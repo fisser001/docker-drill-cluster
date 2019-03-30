@@ -11,3 +11,7 @@ done
 
 # boot drill
 $DRILL_ROOT/bin/drillbit.sh run
+
+
+sleep 60
+curl -X POST -H "Content-Type: application/json" -d '{"name":"hive", "config": {"type": "hive","enabled": true,"configProps": {"hive.metastore.uris": "thrift://hive-metastore:9083","hive.metastore.sasl.enabled": "false","fs.default.name": "hdfs://namenode"}}}' http://172.22.0.8:8047/storage/hive.json
