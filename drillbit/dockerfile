@@ -20,7 +20,7 @@ ADD bootstrap.sh /drill-scripts/
 ENV CLUSTER_ID ""
 ENV ZOOKEEPERS ""
 ENV ENABLE_EXCLUDES ""
-VOLUME /data/results/
+
 WORKDIR /drill-scripts/
 
 ENTRYPOINT ["/bin/sh", "/drill-scripts/bootstrap.sh"]

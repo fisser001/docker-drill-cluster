@@ -146,7 +146,7 @@ services:
   drillbit1:
     image: mfisser/drillbit:1.0.0
     volumes:
-      - drillbit:/data/results    
+      - drillbit:/data/mydata    
     depends_on:
       - zookeeper
     links:
@@ -161,7 +161,7 @@ services:
   drillbit2:
     image: mfisser/drillbit:1.0.0
     volumes:
-      - drillbit:/data/results    
+      - drillbit:/data/mydata    
     depends_on:
       - zookeeper
     links:
@@ -176,7 +176,7 @@ services:
   drillbit3:
     image: mfisser/drillbit:1.0.0
     volumes:
-      - drillbit:/data/results    
+      - drillbit:/data/mydata    
     depends_on:
       - zookeeper
     links:
@@ -191,7 +191,7 @@ services:
   drillbit4:
     image: mfisser/drillbit:1.0.0
     volumes:
-      - drillbit:/data/results    
+      - drillbit:/data/mydata    
     depends_on:
       - zookeeper
     links:
@@ -206,7 +206,7 @@ services:
   drillbit5:
     image: mfisser/drillbit:1.0.0
     volumes:
-      - drillbit:/data/results    
+      - drillbit:/data/mydata    
     depends_on:
       - zookeeper
     links:
