@@ -4,6 +4,7 @@ services:
   namenode:
     image: mfisser/hadoop-namenode:1.0.0-hadoop2.7.6-java8
     container_name: namenode
+    restart: always
     volumes:
       - type: volume
         source: hadoop_namenode
@@ -16,6 +17,7 @@ services:
   resourcemanager:
     image: mfisser/hadoop-resourcemanager:1.0.0-hadoop2.7.6-java8
     container_name: resourcemanager
+    restart: always
     volumes:
       - type: volume
         source: hadoop_resourcemanager
@@ -43,6 +45,7 @@ services:
   
   nodemanager1:
     image: mfisser/hadoop-nodemanager:1.0.0-hadoop2.7.6-java8
+    restart: always
     container_name: nodemanager1
     volumes:
       - type: volume
@@ -57,6 +60,7 @@ services:
 
   nodemanager2:
     image: mfisser/hadoop-nodemanager:1.0.0-hadoop2.7.6-java8
+    restart: always
     container_name: nodemanager2
     volumes:
       - type: volume
@@ -107,6 +111,7 @@ services:
 
   hive-server:
     image: mfisser/hive:1.0.0-hive2.3.2-for-postgresql-metastore
+    restart: always
     volumes:
      - type: volume
        source: mydata
@@ -145,6 +150,7 @@ services:
   
   drillbit1:
     image: mfisser/drillbit:1.0.0
+    restart: always
     volumes:
       - drillbit:/data/mydata    
     depends_on:
@@ -160,6 +166,7 @@ services:
 
   drillbit2:
     image: mfisser/drillbit:1.0.0
+    restart: always
     volumes:
       - drillbit:/data/mydata    
     depends_on:
@@ -175,6 +182,7 @@ services:
 
   drillbit3:
     image: mfisser/drillbit:1.0.0
+    restart: always
     volumes:
       - drillbit:/data/mydata    
     depends_on:
@@ -190,6 +198,7 @@ services:
   
   drillbit4:
     image: mfisser/drillbit:1.0.0
+    restart: always
     volumes:
       - drillbit:/data/mydata    
     depends_on:
@@ -205,6 +214,7 @@ services:
 
   drillbit5:
     image: mfisser/drillbit:1.0.0
+    restart: always
     volumes:
       - drillbit:/data/mydata    
     depends_on:
@@ -220,6 +230,7 @@ services:
 
   zookeeper:
     image: zookeeper:latest
+    restart: always
     ports:
       - 2181:2181    
 
