@@ -19,6 +19,8 @@ The Hadoop components which are used within in the Docker-compose file are descr
 
 The Hive components which are used within in the Docker-compose file are described in the following repository: https://github.com/fisser001/docker-hive
 
+The Hive Metastore component which is used within in the Docker-compose file is described in the following repository: https://github.com/fisser001/docker-hive-metastore-postgresql
+
 In order to start the cluster, Docker and Docker-compose have to be installed on the machine where the cluster should be started. If that is fullfilled navigate to the folder where the Docker-compose file is located. The following command has to be executed for starting all relevant components:
 
 ```console
