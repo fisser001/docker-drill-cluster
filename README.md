@@ -89,7 +89,7 @@ In order to have a better query performance for parquet file set the following p
 set store.hive.parquet.optimize_scan_with_native_reader=true;
 ```
 
-Within in this container one can access the impala shell with the following command in order to execute queries:
+Within this container one can access the impala shell with the following command in order to execute queries:
 ```console
 /opt/drill/apache-drill-1.15.0/bin/sqlline -u jdbc:drill:zk=zookeeper:2181
 ```
