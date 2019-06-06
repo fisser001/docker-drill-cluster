@@ -5,6 +5,13 @@ All container have been build by Docker and executed by Docker-compose.
 
 All given information/code belong only to Apache Drill which was one tool of the benchmark. Each component of Drill has its own Docker image.
 
+## Versions
+- Hadoop: 2.7.6
+- Hive: 2.3.0
+- Drill: 1.15.0
+- Zookeeper: 3.3
+- Postgres: 9.5.3
+
 ## Subfolder and relevant files
 
 The repository is divided into the following subfolder:
